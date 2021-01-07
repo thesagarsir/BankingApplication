@@ -20,7 +20,8 @@ public class SpringController {
 	@RequestMapping("myallemployeedata")
 	public List<Employee> getallEmployees() {
 		
-		System.out.println("welcome...!!!");
+		
+		System.out.println("Changes....");
 		
 	List<Employee> empLiast = 	springService.getallEmployees();
 	
