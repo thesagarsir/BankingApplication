@@ -52,5 +52,17 @@ public class SpringController {
 		return null;
 	}
 	}
+	@RequestMapping("myemployeedatausingname/{name}")
+	public List<Employee> getEmployeeByNameCheck(@PathVariable String name) {
+		
+	List<Employee> empLiast = 	springService.getEmployeeByName(name);
+	
+	if(!empLiast.isEmpty()) {
+		return empLiast;
+	}else {
+		System.out.println("Record Not Found");
+		return null;
+	}
+	}
 	
 }

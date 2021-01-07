@@ -13,4 +13,6 @@ public class SpringBootWithHibernateApplication {
 		SpringApplication.run(SpringBootWithHibernateApplication.class, args);
 	}
 
+	
+	
 }
