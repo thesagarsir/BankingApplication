@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -64,5 +65,21 @@ public class SpringController {
 		return null;
 	}
 	}
+	/*
+	 * @Auther Ankita  US Name:BA-1234
+	 * code for updating employee by their id
+	 * @return
+	 */
+	@PutMapping("updateEmployeeUsingId/{id}")
+	public List<Employee> updateEmployeeById(@PathVariable int id) {
+		
+	List<Employee> empLiast = 	springService.getEmployeeById(id);
 	
+	if(!empLiast.isEmpty()) {
+		return empLiast;
+	}else {
+		System.out.println("Record Not Found");
+		return null;
+	}
+	}
 }
