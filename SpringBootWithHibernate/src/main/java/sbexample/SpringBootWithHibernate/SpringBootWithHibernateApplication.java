@@ -10,6 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 public class SpringBootWithHibernateApplication {
 
 	public static void main(String[] args) {
+		System.out.println("main method started");
 		SpringApplication.run(SpringBootWithHibernateApplication.class, args);
 	}
 
