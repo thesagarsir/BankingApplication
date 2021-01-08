@@ -67,7 +67,7 @@ public class SpringController {
 		return null;
 	}
 	}
-	@RequestMapping("myemployeedatausingname/{name}")
+	@RequestMapping("myemployeedatausingname2/{name}")
 	public List<Employee> getEmployeeByNameCheck(@PathVariable String name) {
 		
 	List<Employee> empLiast = 	springService.getEmployeeByName(name);
