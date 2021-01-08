@@ -14,6 +14,11 @@ public class SpringService {
 	@Autowired
 	SpringDao springDao;
 	
+	public String printMessage() {
+		String s = springDao.printMessage();
+		return s;
+	}
+	
 	public List<Employee> getallEmployees() {
 
 		List<Employee> empList = springDao.getallEmployees();

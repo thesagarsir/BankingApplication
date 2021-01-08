@@ -17,6 +17,11 @@ public class SpringDao {
 	
 	SessionFactory sessionFactory = SpringConfiguration.getSession();
 	
+	public String printMessage() {
+		String s = "Welcome in JavaByKiran";
+		return s;
+	}
+	
 		public List<Employee> getallEmployees() {
 
 		Session session = sessionFactory.openSession();

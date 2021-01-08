@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,12 @@ public class SpringController {
 	// Dependancy Injection
 	@Autowired
 	SpringService springService;
+	
+	@GetMapping(value = "/welcomemessage")
+	public String printMessage() {
+		String str = springService.printMessage();
+		return str;
+	}
 	
 	/* **Bharti US-BA -1111 
 	  Adding New api***/
