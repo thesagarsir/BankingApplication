@@ -20,6 +20,10 @@ public class SpringController {
 	@Autowired
 	SpringService springService;
 	
+	/*
+	 * Vikash Kumar US BNY-456 : Added method printMessage() 
+	 */
+	
 	@GetMapping(value = "/welcomemessage")
 	public String printMessage() {
 		String str = springService.printMessage();

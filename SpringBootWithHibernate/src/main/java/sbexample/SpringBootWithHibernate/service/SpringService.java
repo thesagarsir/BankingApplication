@@ -14,6 +14,9 @@ public class SpringService {
 	@Autowired
 	SpringDao springDao;
 	
+	/*
+	 * Vikash Kumar US BNY-456 : Added method printMessage()
+	 */
 	public String printMessage() {
 		String s = springDao.printMessage();
 		return s;

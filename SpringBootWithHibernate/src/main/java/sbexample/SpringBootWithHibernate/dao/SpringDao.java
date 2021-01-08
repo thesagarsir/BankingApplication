@@ -17,6 +17,10 @@ public class SpringDao {
 	
 	SessionFactory sessionFactory = SpringConfiguration.getSession();
 	
+	/*
+	 * Vikash Kumar US BNY-456 : Added method printMessage()
+	 */
+	
 	public String printMessage() {
 		String s = "Welcome in JavaByKiran";
 		return s;
