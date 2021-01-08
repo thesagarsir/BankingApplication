@@ -42,6 +42,11 @@ public class SpringController {
 		return al;
 		}
 	
+	// Mayur Added welcome api
+	@RequestMapping("welcome")
+	public String welcomMsg(){
+		return "hiii welcome";
+	}
 	
 	 @RequestMapping("myallemployeedata")
 	public List<Employee> getallEmployees() {
