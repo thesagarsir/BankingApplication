@@ -1,5 +1,6 @@
 package sbexample.SpringBootWithHibernate.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,20 @@ public class SpringController {
 	@Autowired
 	SpringService springService;
 	
-	/* @RequestMapping("myallemployeedata")
+	/* **Bharti US-BA -1111 
+	  Adding New api***/
+	
+	@RequestMapping("/getArray")
+	public ArrayList<String> getArray() {
+		ArrayList<String> al=new ArrayList<>();
+		al.add("ABC");
+		al.add("PQR");
+		al.add("GHJ");
+		return al;
+		}
+	
+	
+	 @RequestMapping("myallemployeedata")
 	public List<Employee> getallEmployees() {
 		
 		
@@ -70,16 +84,16 @@ public class SpringController {
 	 * code for updating employee by their id
 	 * @return
 	 */
-//	@PutMapping("updateEmployeeUsingId/{id}")
-//	public List<Employee> updateEmployeeById(@PathVariable int id) {
-//		
-//	List<Employee> empLiast = 	springService.getEmployeeById(id);
-//	
-//	if(!empLiast.isEmpty()) {
-//		return empLiast;
-//	}else {
-//		System.out.println("Record Not Found");
-//		return null;
-//	}
-//	}
+	@PutMapping("updateEmployeeUsingId/{id}")
+	public List<Employee> updateEmployeeById(@PathVariable int id) {
+		
+	List<Employee> empLiast = 	springService.getEmployeeById(id);
+	
+	if(!empLiast.isEmpty()) {
+		return empLiast;
+	}else {
+		System.out.println("Record Not Found");
+		return null;
+	}
+	}
 }

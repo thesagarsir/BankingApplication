@@ -14,7 +14,7 @@ public class SpringService {
 	@Autowired
 	SpringDao springDao;
 	
-/*	public List<Employee> getallEmployees() {
+	public List<Employee> getallEmployees() {
 
 		List<Employee> empList = springDao.getallEmployees();
 		
@@ -31,6 +31,6 @@ public class SpringService {
 		List<Employee> empList = springDao.getEmployeeByName(name);
 		
 		return empList;
-	}*/
+	}
 
 }
