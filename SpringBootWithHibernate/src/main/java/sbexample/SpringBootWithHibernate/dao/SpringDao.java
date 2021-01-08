@@ -17,7 +17,7 @@ public class SpringDao {
 	
 	SessionFactory sessionFactory = SpringConfiguration.getSession();
 	
-	public List<Employee> getallEmployees() {
+	/*	public List<Employee> getallEmployees() {
 
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -51,6 +51,6 @@ public class SpringDao {
 		List<Employee> empList = criteria.list();
 		
 		return empList;
-	}
+	}*/
 
 }

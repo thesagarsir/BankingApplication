@@ -18,7 +18,7 @@ public class SpringController {
 	@Autowired
 	SpringService springService;
 	
-	@RequestMapping("myallemployeedata")
+	/* @RequestMapping("myallemployeedata")
 	public List<Employee> getallEmployees() {
 		
 		
@@ -70,16 +70,16 @@ public class SpringController {
 	 * code for updating employee by their id
 	 * @return
 	 */
-	@PutMapping("updateEmployeeUsingId/{id}")
-	public List<Employee> updateEmployeeById(@PathVariable int id) {
-		
-	List<Employee> empLiast = 	springService.getEmployeeById(id);
-	
-	if(!empLiast.isEmpty()) {
-		return empLiast;
-	}else {
-		System.out.println("Record Not Found");
-		return null;
-	}
-	}
+//	@PutMapping("updateEmployeeUsingId/{id}")
+//	public List<Employee> updateEmployeeById(@PathVariable int id) {
+//		
+//	List<Employee> empLiast = 	springService.getEmployeeById(id);
+//	
+//	if(!empLiast.isEmpty()) {
+//		return empLiast;
+//	}else {
+//		System.out.println("Record Not Found");
+//		return null;
+//	}
+//	}
 }

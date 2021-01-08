@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Built-By: MY SONY
-Build-Jdk: 14.0.2
 Implementation-Title: SpringBootWithHibernate
 Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: asus
 Implementation-Vendor-Id: sbexample
-Implementation-URL: https://spring.io/projects/spring-boot/SpringBootWit
- hHibernate
+Build-Jdk: 1.8.0_144
+Implementation-URL: https://spring.io/projects/spring-boot/SpringBootW
+ ithHibernate
 Created-By: Maven Integration for Eclipse
 
