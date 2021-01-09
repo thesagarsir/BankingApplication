@@ -35,6 +35,7 @@ public class SpringController {
 	
 	@RequestMapping("/getArray")
 	public ArrayList<String> getArray() {
+		System.out.println("*****I am in request Mapping*******");
 		ArrayList<String> al=new ArrayList<>();
 		al.add("ABC");
 		al.add("PQR");
