@@ -12,6 +12,7 @@ public class SpringBootWithHibernateApplication {
 	public static void main(String[] args) {
 		System.out.println("main method started");
 		SpringApplication.run(SpringBootWithHibernateApplication.class, args);
+		System.out.println("I am in main method");
 	}
 
 	
