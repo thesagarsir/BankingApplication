@@ -41,4 +41,9 @@ public class SpringService {
 		return empList;
 	}
 
+	public Employee deleteEmployeeByName(String name) {
+		Employee emp=(Employee) springDao.getEmployeeByName(name);
+		return emp;
+	}
+
 }

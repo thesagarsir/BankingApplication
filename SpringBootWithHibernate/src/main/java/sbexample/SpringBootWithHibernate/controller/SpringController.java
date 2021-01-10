@@ -116,9 +116,24 @@ public class SpringController {
 	}
 	}
 	/*
+	 * @Auther Ankita  US Name:BA-1234
+	 * code for updating employee by their name
+	 * @return
+	 */
+	@PutMapping("updateEmployeeUsingName/{name}")
+	public List<Employee> updateEmployeeByName(@PathVariable String name) {
+	List<Employee> empLiast = 	springService.getEmployeeByName(name);
+	if(!empLiast.isEmpty()) {
+	return empLiast;
+	}else {
+		System.out.println("Record Not Found");
+		return null;
+	}
+	}
+	/*
 	 * @Ankita US-BA-2
 	 * deleted employee by customer id*/
-	@DeleteMapping("updateEmployeeUsingId/{id}")
+	@DeleteMapping("deleteEmployeeUsingId/{id}")
 	public List<Employee> deleteEmployeeById(@PathVariable int id)
 	{
 	List<Employee> empLiast = 	springService.getEmployeeById(id);
@@ -128,6 +143,14 @@ public class SpringController {
 		System.out.println("Record Not Found");
 		return null;
 	}
+	}
+	/*
+	 * @Ankita US-BA-3
+	 * deleted employee by customer name*/
+	@RequestMapping("deleteEmployeeByName/{name}")
+	public void deleteEmployeeByName(@PathVariable String name) {
+		Employee emp=springService.deleteEmployeeByName(name);
+		
 	}
 	
 	
