@@ -29,6 +29,8 @@ public class SpringController {
 		al.add("PQR");
 		al.add("GHJ");
 		al.add("ASDFGHJKm");
+		al.add("PQRSGHJKm");
+		al.add("GHYRTDFFGHJKm");
 		return al;
 		}
 	
