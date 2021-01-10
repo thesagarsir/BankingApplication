@@ -118,7 +118,7 @@ public class SpringController {
 	/*
 	 * @Ankita US-BA-2
 	 * deleted employee by customer id*/
-	@DeleteMapping("updateEmployeeUsingId/{id}")
+	@DeleteMapping("deleteEmployeeUsingId/{id}")
 	public List<Employee> deleteEmployeeById(@PathVariable int id)
 	{
 	List<Employee> empLiast = 	springService.getEmployeeById(id);
@@ -128,6 +128,14 @@ public class SpringController {
 		System.out.println("Record Not Found");
 		return null;
 	}
+	}
+	/*
+	 * @Ankita US-BA-3
+	 * deleted employee by customer name*/
+	@RequestMapping("deleteEmployeeByName/{name}")
+	public void deleteEmployeeByName(@PathVariable String name) {
+		Employee emp=springService.deleteEmployeeByName(name);
+		
 	}
 	
 	
