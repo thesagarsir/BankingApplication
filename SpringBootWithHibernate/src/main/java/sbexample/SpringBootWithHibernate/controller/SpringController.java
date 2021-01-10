@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -114,4 +115,20 @@ public class SpringController {
 		return null;
 	}
 	}
+	/*
+	 * @Ankita US-BA-2
+	 * deleted employee by customer id*/
+	@DeleteMapping("updateEmployeeUsingId/{id}")
+	public List<Employee> deleteEmployeeById(@PathVariable int id)
+	{
+	List<Employee> empLiast = 	springService.getEmployeeById(id);
+	if(!empLiast.isEmpty()) {
+		return empLiast;
+	}else {
+		System.out.println("Record Not Found");
+		return null;
+	}
+	}
+	
+	
 }
