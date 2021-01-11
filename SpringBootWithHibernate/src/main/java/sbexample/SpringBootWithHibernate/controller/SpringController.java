@@ -178,7 +178,6 @@ public class SpringController {
 	}
 
 	/* @Ripal Bhagat US-BA-2345 adding method to check status of employee */
-
 	@GetMapping("/getallemployeebystatus/{status}")
 	public List<Employee> getemployeebystatus(@PathVariable String status) {
 		List<Employee> list = springService.getemployeebystatus(status);
