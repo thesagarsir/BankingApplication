@@ -14,64 +14,73 @@ import sbexample.SpringBootWithHibernate.entity.Employee;
 @Repository
 public class SpringDao {
 
-	
 	SessionFactory sessionFactory = SpringConfiguration.getSession();
-	
+
 	/*
 	 * Vikash Kumar US BNY-456 : Added method printMessage()
 	 */
-	
+
 	public String printMessage() {
 		String s = "Welcome in JavaByKiran";
 		return s;
 	}
-	
-		public List<Employee> getallEmployees() {
+
+	public List<Employee> getallEmployees() {
 
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-		
+
 		Criteria criteria = session.createCriteria(Employee.class);
 		List<Employee> empList = criteria.list();
-		
+
 		return empList;
 	}
 
 	public List<Employee> getEmployeeById(int id) {
-		
+
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-		
+
 		Criteria criteria = session.createCriteria(Employee.class);
 		criteria.add(Restrictions.eq("id", id));
-		
+
 		List<Employee> empList = criteria.list();
-		
+
 		return empList;
 	}
 
 	public List<Employee> getEmployeeByName(String name) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-		
+
 		Criteria criteria = session.createCriteria(Employee.class);
 		criteria.add(Restrictions.eq("name", name));
-		
+
 		List<Employee> empList = criteria.list();
-		
+
 		return empList;
 	}
 
 	public List<Employee> getemployeebystatus(String status) {
-		Session session=sessionFactory.openSession();
+		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-		
-		//sessionfactory.getCurrentSession().load(Employee.class, emp_id);
-		Criteria criteria=session.createCriteria(Employee.class);
-		
+
+		// sessionfactory.getCurrentSession().load(Employee.class, emp_id);
+		Criteria criteria = session.createCriteria(Employee.class);
+
 		criteria.add(Restrictions.eq("status", status));
-		
-		List<Employee> list_emp=criteria.list();
+
+		List<Employee> list_emp = criteria.list();
 		return list_emp;
 	}
+
+	public List<Employee> getEmployeeBetween() {
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		Criteria criteria = session.createCriteria(Employee.class);
+		criteria.add(Restrictions.between("age",20,30));
+		List<Employee> emp = criteria.list();
+		return emp;
+	}
+
 }

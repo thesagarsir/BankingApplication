@@ -75,4 +75,9 @@ public class SpringService {
 		List<Employee> emplist=springDao.getemployeebystatus(status);
 		return  emplist;
 	}
+
+	public List<Employee> getEmployeeBetween() {
+		List<Employee> emp=springDao.getEmployeeBetween();
+		return emp;
+	}
 }
