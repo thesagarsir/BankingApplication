@@ -20,7 +20,6 @@ public class SpringController {
 	// Dependancy Injection
 	@Autowired
 	SpringService springService;
-	
 	/*
 	 * @Ankita US:BA-1234 : Added method to print Message
 	 */

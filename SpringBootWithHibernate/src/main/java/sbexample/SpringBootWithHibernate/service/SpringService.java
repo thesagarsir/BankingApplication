@@ -45,10 +45,11 @@ public class SpringService {
 		Employee emp=(Employee) springDao.getEmployeeByName(name);
 		return emp;
 	}
-
 	public String getMessage() {
 		String s = springDao.getMessage();
 		return s;
 	}
+
+	
 
 }
