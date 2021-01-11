@@ -31,6 +31,16 @@ public class SpringController {
 		return str;
 	}
 	
+	/*
+	 * Vikash Kumar US BNY-457 : Added method primeNumber() to make API for prime number.
+	 */
+	
+	@GetMapping(value = "/primenumber/{num}")
+	public String primeNumber(@PathVariable int num) {
+		String str = springService.primeNumber(num);
+		return str;
+	}
+	
 	/* **Bharti US-BA -1111 
 	  Adding New api***/
 	

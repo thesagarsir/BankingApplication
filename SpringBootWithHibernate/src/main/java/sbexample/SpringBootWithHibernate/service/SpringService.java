@@ -22,6 +22,31 @@ public class SpringService {
 		return s;
 	}
 	
+	/*
+	 * Vikash Kumar US BNY-457 : Added method primeNumber() to make API for prime number.
+	 */
+	
+	public String primeNumber(int num) {
+		boolean flag = false;
+		for (int i = 2; i <= num / 2; i++) {
+			try {
+				if (num % i == 0) {
+					flag = true;
+					break;
+				}
+			} catch (ArithmeticException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		if (!flag) {
+			System.out.println(num + " is a prime number.");
+			return num + " is a prime number.";
+		} else {
+			System.out.println(num + " is not a prime number.");
+			return num + " is not a prime number.";
+		}
+	}
+	
 	public List<Employee> getallEmployees() {
 
 		List<Employee> empList = springDao.getallEmployees();
