@@ -73,8 +73,5 @@ public class SpringDao {
 		
 		List<Employee> list_emp=criteria.list();
 		return list_emp;
-	
 	}
-
-	
 }
