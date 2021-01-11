@@ -64,6 +64,7 @@ public class SpringDao {
 		return empList;
 	}
 
+
 	public void addEmployee(Employee employee) {
 		Session session = sessionFactory.openSession();
 		Transaction tx=session.beginTransaction();
@@ -76,7 +77,6 @@ public class SpringDao {
 			e.printStackTrace();
 			
 		}
-		
 	}
 
 }
