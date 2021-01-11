@@ -68,7 +68,9 @@ public class SpringDao {
 		
 		//sessionfactory.getCurrentSession().load(Employee.class, emp_id);
 		Criteria criteria=session.createCriteria(Employee.class);
+		
 		criteria.add(Restrictions.eq("status", status));
+		
 		List<Employee> list_emp=criteria.list();
 		return list_emp;
 	}
