@@ -163,5 +163,12 @@ public class SpringController {
 		
 	}
 	
+	/*@anjali US-BA-2345
+	 * Adding print Api
+	 * */
+	@GetMapping("/print")
+	public void print() {
+		System.out.println("Hello");
+	}
 	
 }
