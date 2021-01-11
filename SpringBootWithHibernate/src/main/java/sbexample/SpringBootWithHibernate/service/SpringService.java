@@ -46,4 +46,9 @@ public class SpringService {
 		return emp;
 	}
 
+	public void addEmployee(Employee employee) {
+		springDao.addEmployee(employee);
+		
+	}
+
 }

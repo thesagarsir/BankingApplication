@@ -2,9 +2,11 @@ package sbexample.SpringBootWithHibernate.dao;
 
 import java.util.List;
 
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
@@ -60,6 +62,21 @@ public class SpringDao {
 		List<Employee> empList = criteria.list();
 		
 		return empList;
+	}
+
+	public void addEmployee(Employee employee) {
+		Session session = sessionFactory.openSession();
+		Transaction tx=session.beginTransaction();
+		
+		try {
+			session.save(employee);
+			tx.commit();
+		} catch (Exception e) {
+			tx.rollback();
+			e.printStackTrace();
+			
+		}
+		
 	}
 
 }
