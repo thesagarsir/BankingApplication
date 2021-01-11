@@ -183,5 +183,15 @@ public class SpringController {
 		List<Employee> list = springService.getemployeebystatus(status);
 		return list;
 	}
-
+	
+	/*
+	 * Auther : Mayank Bhandakkar : US-MMS-1973 Fetching Employee Between Given Age
+	*/
+	@GetMapping(value="/between/{from}/{to}")
+	public List<Employee> getEmployeeBetween(){
+		List<Employee> emp=springService.getEmployeeBetween();
+		return emp;
+	}
+	
+	
 }
