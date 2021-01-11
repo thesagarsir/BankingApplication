@@ -71,4 +71,10 @@ public class SpringService {
 		return emp;
 	}
 
+	public List<Employee> getemployeebystatus(String status) {
+		// TODO Auto-generated method stub
+		List<Employee> emplist=springDao.getemployeebystatus(status);
+		
+		return  emplist;
+	}
 }

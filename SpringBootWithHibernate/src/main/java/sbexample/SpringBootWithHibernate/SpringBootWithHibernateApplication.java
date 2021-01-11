@@ -14,7 +14,4 @@ public class SpringBootWithHibernateApplication {
 		SpringApplication.run(SpringBootWithHibernateApplication.class, args);
 		System.out.println("I am in main method");
 	}
-
-	
-	
 }

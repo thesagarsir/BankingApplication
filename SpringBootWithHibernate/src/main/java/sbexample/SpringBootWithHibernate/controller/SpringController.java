@@ -20,155 +20,169 @@ public class SpringController {
 	// Dependancy Injection
 	@Autowired
 	SpringService springService;
-	
+
 	/*
-	 * Vikash Kumar US BNY-456 : Added method printMessage() 
+	 * Vikash Kumar US BNY-456 : Added method printMessage()
 	 */
-	
+
 	@GetMapping(value = "/welcomemessage")
 	public String printMessage() {
 		String str = springService.printMessage();
 		return str;
 	}
-	
+
 	/*
-	 * Vikash Kumar US BNY-457 : Added method primeNumber() to make API for prime number.
+	 * Vikash Kumar US BNY-457 : Added method primeNumber() to make API for prime
+	 * number.
 	 */
-	
+
 	@GetMapping(value = "/primenumber/{num}")
 	public String primeNumber(@PathVariable int num) {
 		String str = springService.primeNumber(num);
 		return str;
 	}
-	
-	/* **Bharti US-BA -1111 
-	  Adding New api***/
-	
+
+	/*
+	 * **Bharti US-BA -1111 Adding New api
+	 ***/
+
 	@RequestMapping("/getArray")
 	public ArrayList<String> getArray() {
 		System.out.println("*****I am in request Mapping*******");
-		ArrayList<String> al=new ArrayList<>();
+		ArrayList<String> al = new ArrayList<>();
 		al.add("ABC");
 		al.add("PQR");
 		al.add("GHJ");
 		return al;
-		}
-	
+	}
+
 	// Mayur Added welcome api
 	@RequestMapping("welcome")
-	public String welcomMsg(){
+	public String welcomMsg() {
 		return "hiii welcome";
 	}
-	
-	 @RequestMapping("myallemployeedata")
+
+	@RequestMapping("myallemployeedata")
 	public List<Employee> getallEmployees() {
-		
-		
+
 		System.out.println("Changes....");
 		System.out.println("*************I am in myallemployeedata*************");
-		
-	List<Employee> empLiast = 	springService.getallEmployees();
-	
+
+		List<Employee> empLiast = springService.getallEmployees();
+
 		return empLiast;
 	}
-	
+
 	@RequestMapping("myemployeedatausingid/{id}")
 	public List<Employee> getEmployeeById(@PathVariable int id) {
-		
-	List<Employee> empLiast = 	springService.getEmployeeById(id);
-	
-	if(!empLiast.isEmpty()) {
-		return empLiast;
-	}else {
-		System.out.println("Record Not Found");
-		return null;
+
+		List<Employee> empLiast = springService.getEmployeeById(id);
+
+		if (!empLiast.isEmpty()) {
+			return empLiast;
+		} else {
+			System.out.println("Record Not Found");
+			return null;
+		}
 	}
-	}
+
 	@RequestMapping("myemployeedatausingname/{name}")
 	public List<Employee> getEmployeeByName(@PathVariable String name) {
-		
-	List<Employee> empLiast = 	springService.getEmployeeByName(name);
-	
-	if(!empLiast.isEmpty()) {
-		return empLiast;
-	}else {
-		System.out.println("Record Not Found");
-		return null;
+
+		List<Employee> empLiast = springService.getEmployeeByName(name);
+
+		if (!empLiast.isEmpty()) {
+			return empLiast;
+		} else {
+			System.out.println("Record Not Found");
+			return null;
+		}
 	}
-	}
+
 	@RequestMapping("myemployeedatausingname2/{name}")
 	public List<Employee> getEmployeeByNameCheck(@PathVariable String name) {
-		
-	List<Employee> empLiast = 	springService.getEmployeeByName(name);
-	
-	if(!empLiast.isEmpty()) {
-		return empLiast;
-	}else {
-		System.out.println("Record Not Found");
-		return null;
+
+		List<Employee> empLiast = springService.getEmployeeByName(name);
+
+		if (!empLiast.isEmpty()) {
+			return empLiast;
+		} else {
+			System.out.println("Record Not Found");
+			return null;
+		}
 	}
-	}
+
 	/*
-	 * @Auther Ankita  US Name:BA-1234
-	 * code for updating employee by their id
+	 * @Auther Ankita US Name:BA-1234 code for updating employee by their id
+	 * 
 	 * @return
 	 */
 	@PutMapping("updateEmployeeUsingId/{id}")
 	public List<Employee> updateEmployeeById(@PathVariable int id) {
-		
-	List<Employee> empLiast = 	springService.getEmployeeById(id);
-	
-	if(!empLiast.isEmpty()) {
-		return empLiast;
-	}else {
-		System.out.println("Record Not Found");
-		return null;
+
+		List<Employee> empLiast = springService.getEmployeeById(id);
+
+		if (!empLiast.isEmpty()) {
+			return empLiast;
+		} else {
+			System.out.println("Record Not Found");
+			return null;
+		}
 	}
-	}
+
 	/*
-	 * @Auther Ankita  US Name:BA-1234
-	 * code for updating employee by their name
+	 * @Auther Ankita US Name:BA-1234 code for updating employee by their name
+	 * 
 	 * @return
 	 */
 	@PutMapping("updateEmployeeUsingName/{name}")
 	public List<Employee> updateEmployeeByName(@PathVariable String name) {
-	List<Employee> empLiast = 	springService.getEmployeeByName(name);
-	if(!empLiast.isEmpty()) {
-	return empLiast;
-	}else {
-		System.out.println("Record Not Found");
-		return null;
+		List<Employee> empLiast = springService.getEmployeeByName(name);
+		if (!empLiast.isEmpty()) {
+			return empLiast;
+		} else {
+			System.out.println("Record Not Found");
+			return null;
+		}
 	}
-	}
+
 	/*
-	 * @Ankita US-BA-2
-	 * deleted employee by customer id*/
+	 * @Ankita US-BA-2 deleted employee by customer id
+	 */
 	@DeleteMapping("deleteEmployeeUsingId/{id}")
-	public List<Employee> deleteEmployeeById(@PathVariable int id)
-	{
-	List<Employee> empLiast = 	springService.getEmployeeById(id);
-	if(!empLiast.isEmpty()) {
-		return empLiast;
-	}else {
-		System.out.println("Record Not Found");
-		return null;
+	public List<Employee> deleteEmployeeById(@PathVariable int id) {
+		List<Employee> empLiast = springService.getEmployeeById(id);
+		if (!empLiast.isEmpty()) {
+			return empLiast;
+		} else {
+			System.out.println("Record Not Found");
+			return null;
+		}
 	}
-	}
+
 	/*
-	 * @Ankita US-BA-3
-	 * deleted employee by customer name*/
+	 * @Ankita US-BA-3 deleted employee by customer name
+	 */
 	@RequestMapping("deleteEmployeeByName/{name}")
 	public void deleteEmployeeByName(@PathVariable String name) {
-		Employee emp=springService.deleteEmployeeByName(name);
-		
+		Employee emp = springService.deleteEmployeeByName(name);
+
 	}
-	
-	/*@anjali US-BA-2345
-	 * Adding print Api
-	 * */
+
+	/*
+	 * @anjali US-BA-2345 Adding print Api
+	 */
 	@GetMapping("/print")
 	public void print() {
 		System.out.println("Hello");
 	}
-	
+
+	/* @Ripal Bhagat US-BA-2345 adding method to check status of employee */
+
+	@GetMapping("/getallemployeebystatus/{status}")
+	public List<Employee> getemployeebystatus(@PathVariable String status) {
+		List<Employee> list = springService.getemployeebystatus(status);
+		return list;
+	}
+
 }
