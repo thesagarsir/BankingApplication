@@ -46,9 +46,6 @@ public class SpringService {
 		return emp;
 	}
 
-	public String getMessage() {
-		String s = springDao.getMessage();
-		return s;
-	}
+	
 
 }

@@ -62,9 +62,6 @@ public class SpringDao {
 		return empList;
 	}
 
-	public String getMessage() {
-		String s = "Welcome to Banking Application by Sagar";
-		return s;
-	}
+	
 
 }

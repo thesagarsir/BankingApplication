@@ -22,16 +22,6 @@ public class SpringController {
 	SpringService springService;
 	
 	/*
-	 * @Ankita US:BA-1234 : Added method to print Message
-	 */
-	
-	@GetMapping(value = "/getMessage")
-	public String getMessage() {
-		String str = springService.getMessage();
-		return str;
-	}
-	
-	/*
 	 * Vikash Kumar US BNY-456 : Added method printMessage() 
 	 */
 	
