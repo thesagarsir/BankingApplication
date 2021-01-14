@@ -184,5 +184,10 @@ public class SpringController {
 		List<Employee> list = springService.getemployeebystatus(status);
 		return list;
 	}
+	@RequestMapping("/welcome")
+	public String methodofstring() {
+		return "Welcome";
+
+	}
 
 }
