@@ -39,6 +39,7 @@ public class SpringController {
 	@GetMapping(value = "/primenumber/{num}")
 	public String primeNumber(@PathVariable int num) {
 		String str = springService.primeNumber(num);
+		System.out.println("Prime Number");
 		return str;
 	}
 
