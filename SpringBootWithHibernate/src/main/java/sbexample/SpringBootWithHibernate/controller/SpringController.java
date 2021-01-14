@@ -39,6 +39,7 @@ public class SpringController {
 	@GetMapping(value = "/primenumber/{num}")
 	public String primeNumber(@PathVariable int num) {
 		String str = springService.primeNumber(num);
+		System.out.println("Prime Number");
 		return str;
 	}
 
@@ -182,6 +183,11 @@ public class SpringController {
 	public List<Employee> getemployeebystatus(@PathVariable String status) {
 		List<Employee> list = springService.getemployeebystatus(status);
 		return list;
+	}
+	@RequestMapping("/welcome")
+	public String methodofstring() {
+		return "Welcome";
+
 	}
 
 }
